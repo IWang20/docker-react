@@ -7,7 +7,7 @@ before_install:
   - docker build -t ianwang4/docker-react -f Dockerfile .
 
 script:
-  - docker run ianwang4/docker-react npm run test -- --coverage
+  - docker run ianwang4/docker-react
 
 deploy:
   # AWS
