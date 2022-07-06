@@ -8,3 +8,30 @@ before_install:
 
 script:
   - docker run -e CI=true ianwang4/docker-react npm run test -- --coverage
+
+deploy:
+  # AWS
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: "docker-server"
+  env: "Dockerserver-env"
+  bucket_name: "elasticbeanstalk-us-east-2-054008132521"  # Find in S3
+  bucket_path: "docker-server"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+    
+  # Azure
+  # provider: azure_web_apps
+  # username:
+  # password:
+  # site:
+
+  # Google Cloud
+  # provider: gcs
+  # access_key_id: "GCS Interoperable Access Key ID"
+  # secret_access_key: "GCS Interoperable Acces Secret"
+  # bucket: "GCS Bucket"
+
+  on:
+    branch: master
