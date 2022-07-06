@@ -21,7 +21,8 @@ deploy:
     secure: "$AWS_ACCESS_KEY"
   secret_access_key:
     secure: "$SECRET_ACCESS_KEY"
-
+  on:
+    branch: master
   # Azure
   # provider: azure_web_apps
   # username:
@@ -34,5 +35,3 @@ deploy:
   # secret_access_key: "GCS Interoperable Acces Secret"
   # bucket: "GCS Bucket"
 
-  on:
-    branch: master
