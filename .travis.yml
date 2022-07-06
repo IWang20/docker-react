@@ -12,7 +12,7 @@ script:
 deploy:
   # AWS
   provider: elasticbeanstalk
-  region: us-east-2
+  region: "us-east-2"
   app: "docker-server"
   env: "Dockerserver-env"
   bucket_name: "elasticbeanstalk-us-east-2-054008132521"  # Find in S3
@@ -20,7 +20,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
-    
+
   # Azure
   # provider: azure_web_apps
   # username:
